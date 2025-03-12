@@ -125,12 +125,7 @@ class FengWu_W2S_128:
                     inp = input
                 else:
                     inp = pred_list[ensemble_num]
-
-
-                # print(inp.max())
-
                 output = self.ort_session.run(None, {'input':inp})[0]
-
 
                 if i == 0:
                     next_inp = np.concatenate((inp[:,inp.shape[1]//2:], output[:, :inp.shape[1]//2]), axis=1)
@@ -138,9 +133,6 @@ class FengWu_W2S_128:
                 
                 else:
                     pred_list[ensemble_num] = np.concatenate((pred_list[ensemble_num][:,inp.shape[1]//2:], output[:, :inp.shape[1]//2]), axis=1)
-
-                
-                
                 denorm_output = self.denormalize_output(output[:, :inp.shape[1]//2])
                 ensemble_prediction.append(denorm_output[:,None,:,:,:])
             
@@ -149,7 +141,7 @@ class FengWu_W2S_128:
                 Path(self.output_path).mkdir(parents=True, exist_ok=True)
                 nc_file_path = self.output_path + f"/Prediction_{(i+1)*6}h.nc"
                 self._create_dataset(ensemble_prediction).to_netcdf(nc_file_path)
-                print(f"Saved NetCDF file: {nc_file_path}")
+                # print(f"Saved NetCDF file: {nc_file_path}")
         return print("done") 
     
     def _create_dataset(self, data) -> xr.Dataset:

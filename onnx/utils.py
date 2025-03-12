@@ -2,9 +2,12 @@
 import numpy as np
 import json
 import io
+import torch
+import math
+import time
 
 class DataScaler:
-    def __init__(self, path_pressure='./mean_std.json',path_single='./mean_std_single.json',single_level_vnames=['u10', 'v10', 'msl','u100','v100','t2m','sst','tp6h','swvl1','mtnlwrf','swh','mwd','mwp'],multi_level_vnames=['z', 'q', 'u', 'v', 't']):
+    def __init__(self, path_pressure='./onnx/mean_std.json',path_single='./onnx/mean_std_single.json',single_level_vnames=['u10', 'v10', 'msl','u100','v100','t2m','sst','tp6h','swvl1','mtnlwrf','swh','mwd','mwp'],multi_level_vnames=['z', 'q', 'u', 'v', 't']):
         self.single_level_vnames = single_level_vnames #['u10', 'v10', 'msl','u100','v100','t2m','sst','tp6h','swvl1','mtnlwrf','swh','mwd','mwp']
         self.multi_level_vnames = multi_level_vnames #['z', 'q', 'u', 'v', 't']
         """初始化均值和标准差"""
@@ -32,12 +35,7 @@ class DataScaler:
         else:
             return self.mean_std['mean'][variable],self.mean_std['std'][variable]
 
-import torch
-import math
-import time
-from torchvision import utils as vutils
 
-import numpy as np
 
                     ### perlin noise ###
                     ####################
