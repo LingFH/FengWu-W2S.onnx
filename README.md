@@ -14,6 +14,20 @@ FengWu-W2S:Revisiting the potential for seamless forecasting in AI Weather Model
 *You can observe the generation process of multiple typhoons in late July, as highlighted in member 23.*
 
 
+## Getting started
+### 1. Clone the code and prepare environment (if necessary) using the following command:
+```bash
+$ git clone https://github.com/taohan10200/FengWu-GHR.onnx.git
+$ conda create -n fengwu_w2s python=3.10 -y
+$ conda activate fengwu_w2s
+$ python3 -m pip install -r requirements.txt
+```
+### 2. Modify the configuration file and prapare the data like "input_data0"
+The configuration file allows you to set various parameters for model execution, including the number of steps (n*6h), the magnitude of initial perturbations, and the number of members. Future updates will introduce more flexible and customizable parameters.
+
+Input files should resemble "input_data0" and cover the range of 90N to -90N and 0 to 360E. The order of data features must follow the configuration file, starting from u10 to mwp, and then including different heights for z, q, u, v, and t, ranging from 50 to 1000 hPa.
+
+
 ## Onnx link
 
 We offer two versions of our model:
