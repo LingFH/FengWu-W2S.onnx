@@ -27,6 +27,7 @@ The configuration file allows you to set various parameters for model execution,
 
 Input files should resemble "input_data0" and cover the range of 90N to -90N and 0 to 360E. The order of data features must follow the configuration file, starting from u10 to mwp, and then including different heights for z, q, u, v, and t, ranging from 50 to 1000 hPa.
 
+By the way, don't deal with the SST and other wave variable. Nan will be handled in the function. If the data structure and data characteristics do not match, error predictions may occur.
 
 ## Onnx link
 
