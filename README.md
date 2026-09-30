@@ -17,7 +17,7 @@ FengWu-W2S:Revisiting the potential for seamless forecasting in AI Weather Model
 ## Getting started
 ### 1. Clone the code and prepare environment (if necessary) using the following command:
 ```bash
-$ git clone https://github.com/taohan10200/FengWu-GHR.onnx.git
+$ git clone https://github.com/LingFH/FengWu-W2S.onnx.git
 $ conda create -n fengwu_w2s python=3.10 -y
 $ conda activate fengwu_w2s
 $ python3 -m pip install -r requirements.txt
