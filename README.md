@@ -33,7 +33,7 @@ By the way, don't deal with the **SST and other wave variable. Nan will be handl
 
 We offer two versions of our model:
 
-1. **140 km Resolution**: For access to this version, please contact us at [lingfenghua@pjlab.org.cn](mailto:lingfenghua@pjlab.org.cn) and [bailei@pjlab.org.cn](mailto:bailei@pjlab.org.cn).
+1. **140 km Resolution**: For access to this version, please contact us at [lingfenghua@pjlab.org.cn](mailto:lingfenghua@pjlab.org.cn) 
    
 2. **25 km Resolution**: This version includes stratospheric data and provides enhanced spatial detail, making it particularly effective for predicting extreme weather events, similar to the results shown in Demo 3. The 25 km model will be open-sourced following the acceptance of the manuscript.
 
